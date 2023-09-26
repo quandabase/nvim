@@ -46,7 +46,7 @@ vim.g.maplocalleader = ' '
 vim.wo.relativenumber = true
 vim.opt.tabstop = 4
 vim.opt.shiftwidth = 4
-vim.cmd "set colorcolumn=100"
+vim.cmd([[set colorcolumn=100]])
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
