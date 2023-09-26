@@ -45,6 +45,8 @@ vim.g.maplocalleader = ' '
 
 vim.wo.relativenumber = true
 vim.opt.tabstop = 4
+vim.opt.shiftwidth = 4
+vim.cmd "set colorcolumn=100"
 
 -- Install package manager
 --    https://github.com/folke/lazy.nvim
@@ -69,6 +71,12 @@ vim.opt.rtp:prepend(lazypath)
 --    as they will be available in your neovim runtime.
 require('lazy').setup({
   -- NOTE: First, some plugins that don't require any configuration
+  {
+    'NLKNguyen/papercolor-theme',
+    config = function()
+      vim.cmd([[colorscheme PaperColor]])
+    end
+  },
 
   -- Git related plugins
   'tpope/vim-fugitive',
@@ -150,7 +158,7 @@ require('lazy').setup({
     opts = {
       options = {
         icons_enabled = false,
-        theme = 'onedark',
+        theme = 'PaperColor',
         component_separators = '|',
         section_separators = '',
       },
